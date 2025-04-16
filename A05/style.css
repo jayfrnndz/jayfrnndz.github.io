@@ -1,0 +1,47 @@
+.hero {
+    background: url(background.jpg);
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.islands {
+    font-family: Arial;
+    color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.people {
+    font-family: Arial;
+    color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.culture {
+    font-family: Arial;
+    color: black;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.custom-footer {
+    color: white;
+    background-color: black;
+    padding: 2px;
+    text-align: center;
+    font-family: Arial;
+}
