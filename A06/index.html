@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explore the Philippines</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function islandsMouseEnter(card) {
+            card.style.transform = "scale(1.05)";
+            card.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "1";
+                desc.style.transition = "opacity 0.3s";
+                desc.style.display = "block";
+            }
+        }
+        function islandsMouseLeave(card) {
+            card.style.transform = "scale(1)";
+            card.style.boxShadow = "none";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "0";
+                desc.style.transition = "opacity 0.3s";
+                setTimeout(() => {
+                    desc.style.display = "none";
+                }, 300);
+            }
+        }
+
+        function peopleMouseEnter(card) {
+            card.style.transform = "scale(1.05)";
+            card.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "1";
+                desc.style.transition = "opacity 0.3s";
+                desc.style.display = "block";
+            }
+        }
+        function peopleMouseLeave(card) {
+            card.style.transform = "scale(1)";
+            card.style.boxShadow = "none";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "0";
+                desc.style.transition = "opacity 0.3s";
+                setTimeout(() => {
+                    desc.style.display = "none";
+                }, 300);
+            }
+        }
+        function culturesMouseEnter(card) {
+            card.style.transform = "scale(1.05)";
+            card.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "1";
+                desc.style.transition = "opacity 0.3s";
+                desc.style.display = "block";
+            }
+        }
+        function culturesMouseLeave(card) {
+            card.style.transform = "scale(1)";
+            card.style.boxShadow = "none";
+            var desc = card.querySelector(".card-text");
+            if (desc) {
+                desc.style.opacity = "0";
+                desc.style.transition = "opacity 0.3s";
+                setTimeout(() => {
+                    desc.style.display = "none";
+                }, 300);
+            }
+        }
+        function toggleAboutPH() {
+            var aboutPH = document.getElementById("aboutPH");
+            if (aboutPH.classList.contains("show")) {
+                aboutPH.classList.remove("show");
+            } else {
+                aboutPH.classList.add("show");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid p-2" style="background-color: black;">
+        <div class="row">
+            <div class="col">
+                <div class="h3" style="color: white; font-size: medium;">
+                    Explore PH
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div>
+            <h1>Mabuhay! Welcome to the Philippines</h1>
+            <p>Discover the islands, the people, and the culture</p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="islands mt-5 mb-4">Islands</h2>
+        <div class="row" id="islands">
+        </div>
+        <div class="container-fluid">
+            <h2 class="people my-3">People</h2>
+            <div class="row" id="people">
+            </div>
+            <div class="container-fluid">
+                <h2 class="culture my-3">Cultures</h2>
+                <div class="row" id="cultures">
+                </div>
+
+                <script>
+                    var titles = ["Palawan Island", "Boracay Island", "Siargao Island"];
+                    var pictures = ["palawan.jpg", "boracay.jpg", "siargao.jpg"];
+                    var desc = ["Known for its clear waters, limestone cliffs, and natural wonders like El Nido and the Underground River.", "Famous for its white-sand beach, vibrant nightlife, and water activities.", "A top surf spot with laid-back vibes, clear lagoons, and island-hopping adventures."];
+                    var rowElement = document.getElementById("islands");
+
+                    for (var i = 0; i < titles.length; i++) {
+                        rowElement.innerHTML += '<div class="col-md-4 mb-4"><div" class="card my-3 shadow rounded-5" style="overflow: hidden;" onmouseover="islandsMouseEnter(this)" onmouseleave="islandsMouseLeave(this)"><img src="img/' + pictures[i] + '" class="card-img-top"><div class="card-body"><h4 class="card-title">' + titles[i] + '</h4><p class="card-text">' + desc[i] + '</p></div></div></div>'
+                    }
+
+                    var titles = ["Tagalog", "Cebuano", "Igorot"];
+                    var pictures = ["tagalog.jpg", "cebuano.jpg", "igorot.jpg"];
+                    var desc = ["Found mainly in Luzon; known for hospitality and being the primary speakers of Filipino.", "From the Visayas and Mindanao; known for their strong faith and festive culture.", "Indigenous people of the Cordilleras; known for rice terraces and rich mountain traditions."];
+                    var rowElement = document.getElementById("people");
+
+                    for (var i = 0; i < titles.length; i++) {
+                        rowElement.innerHTML += '<div class="col-md-4 mb-4"><div class="card my-3 shadow rounded-5" style="overflow: hidden;" onmouseover="peopleMouseEnter(this)" onmouseleave="peopleMouseLeave(this)"><img src="img/' + pictures[i] + '" class="card-img-top"><div class="card-body"><h4 class="card-title">' + titles[i] + '</h4><p class="card-text">' + desc[i] + '</p></div></div></div>'
+                    }
+                    var titles = ["Harana", "Fiesta", "Simbang Gabi"];
+                    var pictures = ["harana.jpg", "fiesta.jpg", "simbanggabi.jpg"];
+                    var desc = ["A traditional serenade where a man sings love songs to court a woman, often with a guitar.", "Colorful town celebrations honoring patron saints, filled with parades, food, and dancing.", "A nine-day series of dawn masses leading up to Christmas, showing deep Filipino faith."];
+                    var rowElement = document.getElementById("cultures");
+
+                    for (var i = 0; i < titles.length; i++) {
+                        rowElement.innerHTML += '<div class="col-md-4 mb-4"><div class="card my-3 shadow rounded-5" style="overflow: hidden;" onmouseover="culturesMouseEnter(this)" onmouseleave="culturesMouseLeave(this)"><img src="img/' + pictures[i] + '" class="card-img-top"><div class="card-body"><h4 class="card-title">' + titles[i] + '</h4><p class="card-text">' + desc[i] + '</p></div></div></div>'
+                    }
+                </script>
+
+                <div class="text-center mt-3 mb-5">
+                    <button class="btn btn-primary" type="button" onclick="toggleAboutPH()">
+                        Learn more about the Philippines
+                    </button>
+                </div>
+
+                <div class="collapse mb-5" id="aboutPH">
+                    <div class="card card-body">
+                        The Philippines is an archipelago of 7,641 islands, known for its stunning beaches, rich
+                        history, vibrant festivals, and the warmth of its people. Each island holds a unique adventure,
+                        from pristine lagoons to cultural traditions that have stood the test of time.
+                    </div>
+                </div>
+
+
+
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
