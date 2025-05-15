@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Meal DB</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
     <style>
         .picture-container {
             width: 100%;
@@ -42,8 +42,8 @@
                 <div class="card rounded-3 shadow p-3 mx-auto text-center" style="max-width: 500px">
                     <form onsubmit="event.preventDefault(); getMeal();">
                         <input type="text" class="form-control rounded-3 p-2 mb-3" id="mealNameSearch"
-                            placeholder="Enter a meal name">
-                        <input type="submit" class="btn btn-primary rounded-3 py-2 px-3" value="Search">
+                            placeholder="Enter a meal name" />
+                        <input type="submit" class="btn btn-primary rounded-3 py-2 px-3" value="Search" />
                     </form>
                 </div>
             </div>
@@ -54,50 +54,19 @@
         <div class="row">
             <div class="col">
                 <div class="card text-center p-5 rounded-5 shadow mx-auto" style="max-width: 500px">
-                    <div class="picture-container mx-auto" id="picture-container">
-                        <img src="" id="img" alt="Meal Image">
-                    </div>
-                    <div class="mt-5 h5" id="name">Meal Name</div>
-                    <div class="mt-1 mb-3 card rounded-5 p-2" id="type">Meal Category</div>
+                    <a href="" id="mealLink" style="text-decoration: none;">
+                        <div class="picture-container mx-auto" id="picture-container">
+                            <img src="" id="img" alt="Meal Image" />
+                        </div>
+                        <div class="mt-5 h5" id="name">Meal Name</div>
+                        <div class="mt-1 mb-3 card rounded-5 p-2" id="type">Meal Category</div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        var colors = {
-            "Beef": "#a0522d",
-            "Chicken": "#ffcc99",
-            "Dessert": "#f7c8e0",
-            "Lamb": "#b22222",
-            "Pasta": "#f4a261",
-            "Pork": "#f6bd60",
-            "Seafood": "#48cae4",
-            "Side": "#e9c46a",
-            "Starter": "#e0aaff",
-            "Vegan": "#80ed99",
-            "Vegetarian": "#b5e48c",
-            "Breakfast": "#ffe066",
-            "Goat": "#8d6e63",
-            "Miscellaneous": "#c0c0c0"
-        };
-
-        function isDark(hex) {
-            const r = parseInt(hex.substr(1, 2), 16);
-            const g = parseInt(hex.substr(3, 2), 16);
-            const b = parseInt(hex.substr(5, 2), 16);
-            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-            return brightness < 140;
-        }
-
-        function lightenColor(hex, amount = 40) {
-            const num = parseInt(hex.replace("#", ""), 16);
-            let r = Math.min(255, (num >> 16) + amount);
-            let g = Math.min(255, ((num >> 8) & 0x00FF) + amount);
-            let b = Math.min(255, (num & 0x0000FF) + amount);
-            return `rgb(${r}, ${g}, ${b})`;
-        }
-
         const getMeal = async () => {
             const mealName = document.getElementById("mealNameSearch").value.trim();
             if (!mealName) return alert("Please enter a meal name.");
@@ -115,22 +84,15 @@
             document.getElementById("name").textContent = meal.strMeal;
             document.getElementById("type").textContent = meal.strCategory;
             document.getElementById("img").src = meal.strMealThumb;
-
-            const bgColor = colors[meal.strCategory] || "#dddddd";
-            const cardColor = isDark(bgColor) ? lightenColor(bgColor, 60) : bgColor;
-            document.querySelector("#mealMainContainer .card").style.backgroundColor = cardColor;
-            document.querySelector("#mealMainContainer .card").style.color = isDark(cardColor) ? "#fff" : "#000";
-
-            document.getElementById("type").style.backgroundColor = bgColor;
-            document.getElementById("picture-container").style.backgroundColor = bgColor;
+            document.getElementById("mealLink").href = `view.html?id=${meal.idMeal}`;
 
             document.getElementById("mealMainContainer").style.display = "block";
         };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
-        </script>
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
