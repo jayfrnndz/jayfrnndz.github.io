@@ -8,6 +8,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        [data-bs-theme="dark"] {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] h1,
+        [data-bs-theme="dark"] h2,
+        [data-bs-theme="dark"] h4,
+        [data-bs-theme="dark"] p {
+            color: #ffffff !important;
+        }
+
+        [data-bs-theme="dark"] .card {
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .card-text {
+            color: #cccccc !important;
+        }
+
+        [data-bs-theme="dark"] .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+    </style>
+
     <script>
         function islandsMouseEnter(card) {
             card.style.transform = "scale(1.05)";
@@ -88,12 +116,19 @@
 
 </head>
 
-<body>
+<body id="body">
     <div class="container-fluid p-2" style="background-color: black;">
-        <div class="row">
-            <div class="col">
-                <div class="h3" style="color: white; font-size: medium;">
-                    Explore PH
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="py-2 d-flex flex-row justify-content-between align-items-center">
+                        <div class="h4" style="color: white;">
+                            Explore PH
+                        </div>
+                        <button id="colorBtn" onclick="changeMode()" class="ms-4 px-3 py-2 btn-dark">
+                            Dark Mode
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,6 +196,24 @@
                     </div>
                 </div>
 
+                <script>
+                    var mode = "light";
+                    function changeMode() {
+                        var body = document.getElementById("body");
+                        var colorBtn = document.getElementById("colorBtn");
+                        mode = mode == "light" ? "dark" : "light";
+
+                        var btnText = mode == "dark" ? "Light Mode" : "Dark Mode";
+                        var btnClass = mode == "dark" ? "btn_light" : "btn-dark";
+
+                        colorBtn.classList.remove("btn-light");
+                        colorBtn.classList.remove("btn-dark");
+                        colorBtn.classList.add(btnClass);
+                        colorBtn.innerHTML = btnText;
+
+                        body.setAttribute("data-bs-theme", mode);
+                    }
+                </script>
 
 
 
