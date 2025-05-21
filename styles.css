@@ -1,26 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: white;
+    background-color: #f4f4f4;
 }
 
-header {
-    background-color: black;
-    color: white;
-    padding: 10px;
+.hero {
+    padding: 60px 0;
+    background: #ffffff;
 }
 
-.profile {
-    margin-top: 20px;
-}
-
-.profile img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
+.profile-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
     border: 2px solid black;
 }
 
@@ -33,4 +24,10 @@ header {
 
 .card-body {
     flex-grow: 1;
+    text-align: center;
+}
+
+.btn-purple {
+    background-color: #7c3aed;
+    color: white;
 }
