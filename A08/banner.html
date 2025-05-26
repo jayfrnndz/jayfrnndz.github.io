@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="parallax.css" />
+	<title>Black Clover</title>
+</head>
+<style>
+	.black-clover {
+		background-color: #1e1e1e;
+		padding: 50px 20px;
+		text-align: center;
+	}
+
+	.black-clover h1 {
+		color: #ffffff;
+		font-size: 2rem;
+	}
+
+	.asta {
+		background-color: #1e1e1e;
+		padding: 50px 20px;
+		text-align: center;
+	}
+
+	.asta h1 {
+		color: #ffffff;
+		font-size: 2rem;
+	}
+
+	.image-container {
+		width: 100%;
+		background-color: #0f0f0f;
+		padding: 40px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.image {
+		width: 100%;
+		max-width: 1000px;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+	}
+
+	.asta-image-container {
+		width: 100%;
+		background-color: #0f0f0f;
+		padding: 40px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.asta-image {
+		width: 100%;
+		max-width: 1000px;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+	}
+</style>
+
+<body>
+	<section>
+		<div class="keyart" id="parallax">
+			<div class="keyart_layer parallax" id="keyart-0" data-speed="50"></div>
+			<div class="keyart_layer parallax" id="keyart-1" data-speed="45"></div>
+			<div class="keyart_layer parallax" id="keyart-2" data-speed="40"></div>
+			<div class="keyart_layer parallax" id="keyart-3" data-speed="90"></div>
+			<div class="keyart_layer parallax" id="keyart-4" data-speed="95"></div>
+			<div class="keyart_layer parallax" id="keyart-5" data-speed="85"></div>
+			<div class="keyart_layer parallax" id="keyart-6" data-speed="95"></div>
+			<div class="keyart_layer parallax" id="keyart-7" data-speed="100"></div>
+			<div class="keyart_layer" id="keyart-8" data-speed="110"></div>
+		</div>
+	</section>
+
+	<section class="main-content">
+		<div class="black-clover" style="color: rgb(228, 218, 218);">
+			<h1>Black Clover</h1>
+			<p>
+				In the world of Black Clover, magic is everything—status, power, and success all depend on it. Everyone
+				is born with magical abilities... except for Asta, an orphan who has no magic at all. Alongside his
+				childhood friend and rival, Yuno—a gifted magical prodigy—they both share the same dream: to become the
+				Wizard King, the strongest mage in the Clover Kingdom.
+
+				While Yuno receives a rare four-leaf clover grimoire, Asta unexpectedly obtains a mysterious five-leaf
+				clover grimoire, which grants him anti-magic—a power that can nullify and cut through spells. Despite
+				having no magic, Asta trains his body relentlessly and refuses to give up.
+
+				Their journey begins when they join the Magic Knights, facing fierce battles, dark enemies, and deep
+				secrets that challenge their beliefs and strength. As they grow stronger, the path to becoming Wizard
+				King becomes clearer—but only one can claim the title. Through it all, Asta is determined to prove that
+				even without magic, he can stand at the top.
+			</p>
+		</div>
+		<div class="image-container">
+			<img src="img/astayuno.png" alt="" class="image">
+		</div>
+
+		<div class="asta" style="color: rgb(228, 218, 218);">
+			<h1>Asta</h1>
+			<p>
+				Asta is a loud, energetic, and determined young man born without magic in a world where magic means
+				everything. Armed with a rare five-leaf clover grimoire and anti-magic swords, he overcomes impossible
+				odds through sheer willpower, intense training, and unwavering resolve. Loyal, brave, and never one to
+				back down, Asta is an underdog who strives to become the Wizard King—no matter what stands in his way.
+			</p>
+		</div>
+		<div class="asta-image-container">
+			<img src="img/asta.gif" alt="" class="asta-image">
+		</div>
+	</section>
+
+	<!--Uses JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/parallax.js"></script>
+
+</body>
+
+</html>
